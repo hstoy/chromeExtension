@@ -1,0 +1,27 @@
+{
+  "name": "Please stop pausing my playlist",
+  "description": "Should handle the annoying 'Still watcihng?' thingy!",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://www.youtube.com/watch?v*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.youtube.com/watch?v*"
+      ],
+      "js": [
+        "contentScript.js"
+      ]
+    }
+  ]
+}
